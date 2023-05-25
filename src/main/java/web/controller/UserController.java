@@ -58,16 +58,6 @@ public class UserController {
     }
 
     @GetMapping(value = "/user/list")
-    public String userInfoOfOrders(HttpServletRequest request, Model model , User user) {
-        HttpSession session = request.getSession();
-        if (session.getAttribute("user") == null) {
-            return "login";
-        }
-        model.addAttribute("ordersList", orderService.allUsersOrdersById());
-        return "userInfo";
-    }
-
-    @GetMapping(value = "/user/list")
     public String userInfo(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         if (session.getAttribute("user") == null) {
