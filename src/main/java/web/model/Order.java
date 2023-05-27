@@ -15,6 +15,9 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "orders")
 @Data
+/**
+ * Названия надо давать согласно правил Java
+ */
 public class Order {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +26,10 @@ public class Order {
 
   @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
   @ToString.Exclude
-  private List<Product> product_id;
+  private List<Product> products;
 
   @ManyToOne(fetch = FetchType.EAGER)
-  private User user_id;
+  private User user;
 
-  private LocalDate order_date;
+  private LocalDate createDate;
 }

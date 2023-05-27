@@ -19,7 +19,7 @@ public class OrderService {
   private final OrderRepository repo;
 
   public List<Order> findAllOrders() {
-    return (List<Order>) repo.findAll();
+    return repo.findAll();
   }
 
   public Order findOrderById(Long id) {
@@ -34,15 +34,8 @@ public class OrderService {
     repo.delete(order);
   }
 
-  @Transactional
-  public List<Order> findAll() {
-    List<Order> all = repo.listAllOrders();
-    return all;
-  }
-
-  @Transactional
-  public List<Order> allUsersOrdersById() {
-    List<Order> all = repo.listAllUsersOrdersById();
+  public List<Order> allUsersOrdersById(Long userId) {
+    List<Order> all = repo.findAllByUser_id(userId);
     return all;
   }
 

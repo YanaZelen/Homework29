@@ -14,9 +14,5 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
   Product findProductById(Long id);
 
-  List<User> findAllProducts();
-
-  void addProduct(Product product);
-
-  void deleteProduct(Product product);
+  List<Product> findAll();
 }

@@ -13,11 +13,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 
   User findUserById(Long id);
 
-  List<User> findAllUsers();
-
-  void addUser(User user);
-
-  void deleteUser(User user);
+  List<User> findAll();
 
   boolean existsUserByNameAndPassword(String name, String password);
   User findUserByName(String name);

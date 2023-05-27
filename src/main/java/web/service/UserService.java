@@ -15,7 +15,7 @@ public class UserService {
   private final UserRepository repo;
 
   public List<User> findAllUsers() {
-    return repo.findAllUsers();
+    return repo.findAll();
   }
 
   public User findUserById(Long id) {
@@ -23,11 +23,11 @@ public class UserService {
   }
 
   public void addUser(User user) {
-    repo.addUser(user);
+    repo.save(user);
   }
 
   public void deleteUser(User user) {
-    repo.deleteUser(user);
+    repo.save(user);
   }
 
   public boolean existUser(String name, String password) {
