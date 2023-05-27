@@ -21,7 +21,8 @@ public class User {
   private String email;
   private String password;
 
-  @OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
+  @OneToMany
+  @JoinColumn(name = "user_id")
   @ToString.Exclude
   private List<Order> orders;
 

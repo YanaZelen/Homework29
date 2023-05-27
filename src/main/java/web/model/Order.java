@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -24,10 +25,8 @@ public class Order {
   @ToString.Exclude
   private List<Product> product_id;
 
-  @ManyToOne
-  @JoinColumn
-  @ToString.Exclude
+  @ManyToOne(fetch = FetchType.EAGER)
   private User user_id;
 
-  private String order_date;
+  private LocalDate order_date;
 }
