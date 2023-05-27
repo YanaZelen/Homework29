@@ -15,9 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "orders")
 @Data
-/**
- * Названия надо давать согласно правил Java
- */
 public class Order {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -19,7 +19,6 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-    private final OrderService orderService;
 
     @GetMapping(value = "/")
     public ResponseEntity<String> getHomePage() {
